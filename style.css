@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Archivo:ital,wght@0,100..900;1,100..900&family=Geist+Mono:wght@100..900&display=swap");
+body {
+  font-family: "Archivo", sans-serrif;
+  margin: 0;
+  color: white;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  color: white;
+  font-size: 32pt;
+  font-weight: 100;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  background-color: rgba(000, 000, 000, 0.5);
+  backdrop-filter: blur(1px);
+}
+.hero {
+  position: absolute;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+#headerText {
+  font-size: 100em;
+}
