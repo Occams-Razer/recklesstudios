@@ -2,28 +2,98 @@
 body {
   font-family: "Archivo", sans-serrif;
   margin: 0;
+  padding: 0;
+  background-color: black;
   color: white;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 nav {
+  font-family: "Archivo Narrow";
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 100;
   color: white;
-  font-size: 32pt;
-  font-weight: 100;
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
   background-color: rgba(000, 000, 000, 0.5);
   backdrop-filter: blur(1px);
 }
+.navText {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-block: 25px;
+}
 .hero {
-  position: absolute;
-  background-color: black;
+  z-index: -1;
+  position: relative;
+  object-fit: cover;
+  width: 100%;
   height: 100vh;
-  width: 100vw;
+  display: flex;
+  color: white;
+  flex-shrink: 0;
+  background-color: black;
+  background-image: url(RecklessBackPlaceholder.png);
+  background-size: 100% 100%;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 #headerText {
-  font-size: 100em;
+  color: #fff;
+  font-family: "Archivo";
+  font-size: 500px;
+  font-style: normal;
+  font-weight: 700;
+  white-space: no-wrap;
+  line-height: normal;
+  height: 0;
+}
+.about {
+  overflow-x: hidden;
+  white-space: no-wrap;
+  display: flex;
+  width: 100vw;
+  height: 80%;
+  padding: 20px 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #e93636;
+}
+#aboutText {
+  margin-block: 0;
+  color: #fff;
+  text-align: justify;
+  font-family: Archivo;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.marquee {
+  display: flex;
+  transform: translateX(-50%);
+  width: max-content;
+  mix-blend-mode: exclusion;
+  animation: marquee 60s linear infinite;
+}
+
+#filmText {
+  font-family: "Archivo Narrow";
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
 }
