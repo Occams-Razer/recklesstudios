@@ -1,16 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Archivo:ital,wght@0,100..900;1,100..900&family=Geist+Mono:wght@100..900&display=swap");
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Archivo", sans-serrif;
   margin: 0;
   padding: 0;
   background-color: black;
   color: white;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   overflow-x: hidden;
+  @media (min-width: 800px) {
+    .navText {
+      content: "";
+    }
+  }
 }
 nav {
-  font-family: "Archivo Narrow";
   position: fixed;
   width: 100vw;
   z-index: 100;
@@ -23,7 +29,7 @@ nav {
   backdrop-filter: blur(1px);
 }
 .navText {
-  font-size: 2em;
+  font-size: clamp(32px, 3vw, 5vw);
   color: #fff;
   text-align: center;
   font-family: "Archivo";
@@ -32,68 +38,95 @@ nav {
   line-height: normal;
   margin-block: 25px;
 }
+a {
+  color: white;
+  text-decoration: none;
+}
 .hero {
-  z-index: -1;
-  position: relative;
-  object-fit: cover;
+  overflow-x: hidden;
   width: 100%;
   height: 100vh;
   display: flex;
+  align-items: flex-end;
   color: white;
-  flex-shrink: 0;
   background-color: black;
   background-image: url(RecklessBackPlaceholder.png);
-  background-size: 100% 100%;
-  background-position: fixed;
+  background-size: cover;
+  background-position: center 0%;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
-#headerText {
+.headerText {
+  width: 100vw;
+  height: fit-content;
   color: #fff;
   font-family: "Archivo";
-  font-size: 500px;
+  font-size: 50vh;
   font-style: normal;
   font-weight: 700;
-  white-space: no-wrap;
-  line-height: normal;
-  height: 0;
+  margin-block: 0;
 }
 .about {
   overflow-x: hidden;
-  white-space: no-wrap;
+  background-color: #e93636;
   display: flex;
-  width: 100vw;
-  height: 80%;
-  padding: 20px 20px;
   justify-content: center;
   align-items: center;
-  background-color: #e93636;
+  width: 100vw;
+  height: fit-content;
+  padding: 2vw 2vh;
 }
 #aboutText {
+  width: inherit;
   margin-block: 0;
   color: #fff;
   text-align: justify;
   font-family: Archivo;
-  font-size: 128px;
+  font-size: 10vw;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-
 .marquee {
   display: flex;
-  transform: translateX(-50%);
-  width: max-content;
+  align-items: flex-end;
+  width: 100%;
+  height: fit-content;
   mix-blend-mode: exclusion;
-  animation: marquee 60s linear infinite;
+  animation: marquee 120s linear infinite;
 }
-
+.films {
+  width: 100%;
+  height: 100vh;
+  background-repeat: repeat;
+  background-image: url(BgFilmPlaceholderV2.svg);
+  background-size: 50%;
+  background-blend-mode: darken;
+  animation: pan 30s linear infinite;
+}
 #filmText {
-  font-family: "Archivo Narrow";
+  margin-block: 0;
+  font-family: "Archivo";
 }
+@keyframes pan {
+  0% {
+    background-position: 0% 0%;
+  }
 
+  100% {
+    background-position: 100%;
+  }
+}
 @keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
   to {
     transform: translateX(-100%);
   }
+}
+
+.marquee-container .marquee::after {
+  content: attr(data-text); /* Duplicate the text */
+  display: inline-block;
+  padding-left: 100%; /* Add space between the original and duplicate */
 }
