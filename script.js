@@ -19,7 +19,7 @@ function updateNavbar() {
     nav3.innerHTML = "▲";
     nav4.innerHTML = "▲";
     nav5.innerHTML = "▲";
-    // navText.style.fontSize = "1 vw";
+    navText.style.fontSize = "10px";
   } else {
     nav1.innerHTML = "home";
     nav2.innerHTML = "about";
