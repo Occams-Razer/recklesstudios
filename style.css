@@ -24,21 +24,33 @@ nav {
   color: white;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: clamp(4vw, 4vw, 1.5rem);
   justify-content: center;
   background-color: rgba(000, 000, 000, 0.5);
   backdrop-filter: blur(1px);
 }
 .navText {
-  font-size: clamp(32px, 3vw, 3em);
+  cursor: pointer;
+  font-size: clamp(32px, 2vw, 3rem);
+  overflow-wrap: break-word;
   color: #fff;
   text-align: center;
   font-family: "Archivo";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
-  margin-block: 25px;
+  margin-block: 2vh;
+  background-position: 0 100%;
+  transform: translateY(0), scale(1);
+  transition: transform 0.25s ease-in-out;
+  &:hover {
+    transform: translateY(-0.3rem);
+  }
+  &:active {
+    transform: scale(1);
+  }
 }
+
 a {
   color: white;
   text-decoration: none;
@@ -57,7 +69,7 @@ a {
   background-repeat: no-repeat;
 }
 .headerText {
-  width: 100vw;
+  width: fit-content;
   height: fit-content;
   color: #fff;
   font-family: "Archivo";
@@ -65,19 +77,22 @@ a {
   font-style: normal;
   font-weight: 700;
   margin-block: 0;
+  user-select: none;
 }
 .about {
   overflow-x: hidden;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
   background-color: #e93636;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: fit-content;
-  padding: 2vw 2vh;
 }
 #aboutText {
-  word-wrap: break-word;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
   width: inherit;
   margin-block: 0;
   color: #fff;
@@ -87,13 +102,20 @@ a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  padding: 2vw 2vh;
 }
 .marquee {
   display: flex;
   align-items: flex-end;
-  width: 100%;
+  justify-content: flex-start;
+  width: fit-content;
   height: fit-content;
   mix-blend-mode: exclusion;
+  /* animation: marquee 120s linear infinite; */
+}
+.marquee .headerText {
+  display: inline-block;
+  padding-right: 2vw;
   animation: marquee 120s linear infinite;
 }
 .overlay {
@@ -106,6 +128,7 @@ a {
   height: 100vh;
 }
 .filmContent {
+  padding: 2vh 2vw;
   position: relative;
   z-index: 1;
 }
@@ -124,9 +147,29 @@ a {
   animation: pan 30s linear infinite;
 }
 
-#filmText {
+.filmText {
+  width: fit-content;
   margin-block: 0;
-  font-family: "Archivo";
+  font-size: 8vw;
+  font-weight: 550;
+  font-family: "Geist Mono";
+  user-select: none;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  background: linear-gradient(120deg, #fff 0%, #fff 100%);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  background-position: 0 100%;
+  transition: background-size 0.6s ease-in-out, color 0.25s ease-in-out;
+
+  &::before {
+    content: "_";
+  }
+  &:hover {
+    background-size: 100% 100%;
+    color: black;
+  }
 }
 @keyframes pan {
   0% {
@@ -134,7 +177,7 @@ a {
   }
 
   100% {
-    background-position: 100%;
+    background-position: 100% 0%;
   }
 }
 @keyframes marquee {
@@ -144,10 +187,4 @@ a {
   to {
     transform: translateX(-100%);
   }
-}
-
-.marquee-container .marquee::after {
-  content: attr(data-text); /* Duplicate the text */
-  display: inline-block;
-  padding-left: 100%; /* Add space between the original and duplicate */
 }

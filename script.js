@@ -4,7 +4,34 @@
 //   el: document.querySelector("[data-scroll-container]"),
 //   smooth: true,
 // });
+const letters = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
 
+let interval = null;
+
+document.querySelector(".filmText").onmouseover = (event) => {
+  let iteration = 0;
+
+  clearInterval(interval);
+
+  interval = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if (index < iteration) {
+          return event.target.dataset.value[index];
+        }
+
+        return letters[Math.floor(Math.random() * 47)];
+      })
+      .join("");
+
+    if (iteration >= event.target.dataset.value.length) {
+      clearInterval(interval);
+    }
+
+    iteration += 1 / 3;
+  }, 25);
+};
 function updateNavbar() {
   const navText = document.getElementsByClassName("navText");
   const nav1 = document.getElementById("nav1");
@@ -19,7 +46,7 @@ function updateNavbar() {
     nav3.innerHTML = "▲";
     nav4.innerHTML = "▲";
     nav5.innerHTML = "▲";
-    navText.style.fontSize = "10px";
+    // navText.style.fontSize = "10px";
   } else {
     nav1.innerHTML = "home";
     nav2.innerHTML = "about";
