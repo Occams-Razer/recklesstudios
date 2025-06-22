@@ -38,14 +38,14 @@ function updateNavbar() {
   const nav2 = document.getElementById("nav2");
   const nav3 = document.getElementById("nav3");
   const nav4 = document.getElementById("nav4");
-  const nav5 = document.getElementById("nav5");
+  // const nav5 = document.getElementById("nav5");
 
   if (window.innerWidth <= 768) {
-    nav1.innerHTML = "▲";
-    nav2.innerHTML = "▲";
-    nav3.innerHTML = "▲";
-    nav4.innerHTML = "▲";
-    nav5.innerHTML = "▲";
+    nav1.innerHTML = "h";
+    nav2.innerHTML = "a";
+    nav3.innerHTML = "f";
+    nav4.innerHTML = "s";
+    // nav5.innerHTML = "c";
     // navText.style.fontSize = "10px";
   } else {
     nav1.innerHTML = "home";
