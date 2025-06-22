@@ -1,95 +1,91 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import "./style.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <nav id="navbar">
+          <h3 className="navText" id="nav1">
+            <a href="index.html">home</a>
+          </h3>
+          <h3 class="navText" id="nav2">
+            <a>about</a>
+          </h3>
+          <h3 class="navText" id="nav3">
+            <a>film</a>
+          </h3>
+          <h3 class="navText" id="nav4">
+            <a>services</a>
+          </h3>
+        </nav>
+        <header class="hero">
+          <div class="marquee">
+            <h1 class="headerText" id="t1">
+              RECKLESS•STUDIOS•
+            </h1>
+            <h1 class="headerText" id="t2">
+              RECKLESS•STUDIOS•
+            </h1>
+          </div>
+        </header>
+        <section class="about">
+          <h2 id="aboutText">
+            We are a independent film studio based in madison, wi.
+          </h2>
+        </section>
+        <section class="filmContainer">
+          <div class="filmContent">
+            <h1>
+              <a class="filmText" data-value="the grey code.">
+                the grey code.
+              </a>
+            </h1>
+            <div class="filmArrow">Hi</div>
+          </div>
+          <div class="filmBackground"></div>
+        </section>
+        <section class="servicesContainer">
+          <div class="servicesMarqueeTrack">
+            <div class="servicesMarqueeContainer">
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+              <h4 class="servicesHeader">Services⟡</h4>
+            </div>
+          </div>
+          <div class="servicesContent">
+            <div class="servicesPackage">
+              <h2 class="packageTitle">The Director's Cut</h2>
+            </div>
+            <div class="servicesPackage">
+              <h2 class="packageTitle">The Full Shoot</h2>
+            </div>
+            <div class="servicesPackage">
+              <h2 class="packageTitle">The Concept Spark</h2>
+            </div>
+          </div>
+        </section>
+        <section class="contact"></section>
+        {/* <script src="script.js"></script> */}
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
