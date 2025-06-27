@@ -8,6 +8,7 @@ const letters = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
 
 let interval = null;
 
+
 document.querySelector(".filmText").onmouseover = (event) => {
   let iteration = 0;
 

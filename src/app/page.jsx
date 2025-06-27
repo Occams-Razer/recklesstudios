@@ -1,6 +1,7 @@
 import Image from "next/image";
-import styles from "./page.module.css";
-import "./style.css";
+// import styles from "./page.module.css";
+import styles from "./style.css";
+import "./script.js";
 
 export default function Home() {
   return (
@@ -10,81 +11,81 @@ export default function Home() {
           <h3 className="navText" id="nav1">
             <a href="index.html">home</a>
           </h3>
-          <h3 class="navText" id="nav2">
+          <h3 className="navText" id="nav2">
             <a>about</a>
           </h3>
-          <h3 class="navText" id="nav3">
+          <h3 className="navText" id="nav3">
             <a>film</a>
           </h3>
-          <h3 class="navText" id="nav4">
+          <h3 className="navText" id="nav4">
             <a>services</a>
           </h3>
         </nav>
-        <header class="hero">
-          <div class="marquee">
-            <h1 class="headerText" id="t1">
+        <header className="hero">
+          <div className="marquee">
+            <h1 className="headerText" id="t1">
               RECKLESS•STUDIOS•
             </h1>
-            <h1 class="headerText" id="t2">
+            <h1 className="headerText" id="t2">
               RECKLESS•STUDIOS•
             </h1>
           </div>
         </header>
-        <section class="about">
+        <section className="about">
           <h2 id="aboutText">
             We are a independent film studio based in madison, wi.
           </h2>
         </section>
-        <section class="filmContainer">
-          <div class="filmContent">
+        <section className="filmContainer">
+          <div className="filmContent">
             <h1>
-              <a class="filmText" data-value="the grey code.">
+              <a className="filmText" data-value="the grey code.">
                 the grey code.
               </a>
             </h1>
-            <div class="filmArrow">Hi</div>
+            <div className="filmArrow">Hi</div>
           </div>
-          <div class="filmBackground"></div>
+          <div className="filmBackground"></div>
         </section>
-        <section class="servicesContainer">
-          <div class="servicesMarqueeTrack">
-            <div class="servicesMarqueeContainer">
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
-              <h4 class="servicesHeader">Services⟡</h4>
+        <section className="servicesContainer">
+          <div className="servicesMarqueeTrack">
+            <div className="servicesMarqueeContainer">
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
+              <h4 className="servicesHeader">Services⟡</h4>
             </div>
           </div>
-          <div class="servicesContent">
-            <div class="servicesPackage">
-              <h2 class="packageTitle">The Director's Cut</h2>
+          <div className="servicesContent">
+            <div className="servicesPackage">
+              <h2 className="packageTitle">The Director's Cut</h2>
             </div>
-            <div class="servicesPackage">
-              <h2 class="packageTitle">The Full Shoot</h2>
+            <div className="servicesPackage">
+              <h2 className="packageTitle">The Full Shoot</h2>
             </div>
-            <div class="servicesPackage">
-              <h2 class="packageTitle">The Concept Spark</h2>
+            <div className="servicesPackage">
+              <h2 className="packageTitle">The Concept Spark</h2>
             </div>
           </div>
         </section>
-        <section class="contact"></section>
-        {/* <script src="script.js"></script> */}
+        <section className="contact"></section>
+        <script src="script.js"></script>
       </main>
     </div>
   );
