@@ -81,6 +81,7 @@ a {
 }
 .about {
   overflow-x: hidden;
+  overflow-y: hidden;
   text-transform: uppercase;
   overflow-wrap: break-word;
   background-color: #e93636;

@@ -1,0 +1,21 @@
+.scroll-reveal {
+  padding: 5vh 10vw;
+}
+
+.scroll-reveal-text {
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  width: inherit;
+  margin-block: 0;
+  color: #fff;
+  text-align: justify;
+  font-family: Archivo;
+  font-size: 10vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.word {
+  display: inline-block;
+}

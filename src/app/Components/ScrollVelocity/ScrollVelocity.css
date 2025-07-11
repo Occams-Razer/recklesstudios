@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Archivo:ital,wght@0,100..900;1,100..900&family=Geist+Mono:wght@100..900&display=swap");
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroller {
+  color: black;
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  font-family: "Archivo";
+  font-size: 2.25vw;
+  font-weight: bold;
+}
+
+.scroller span {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .scroller {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}
