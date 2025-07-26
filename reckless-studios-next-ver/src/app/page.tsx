@@ -1,13 +1,22 @@
+"use client";
 import ScrollVelocity from "./components/ScrollVelocity/ScrollVelocity";
 import ServiceCard from "./components/ServiceCard/ServiceCard";
 import Marquee from "react-fast-marquee";
 import DecryptedText from "./components/DecryptedText/DecryptedText";
 import Dither from "./backgrounds/Dither/Dither";
 import ScrambleText from "./components/ScrambleText/ScrambleText";
+import { useEffect } from "react";
 const HomePage: React.FC = () => {
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
+
   return (
     <>
-      <div className="flex flex-col font-archivo m-0 p-0 bg-black text-white w-screen h-full overflow-x-hidden !scroll-smooth">
+      <div className="flex flex-col font-[family-name:var(--archivo)] m-0 p-0 bg-black text-white w-screen h-full overflow-x-hidden !scroll-smooth">
         <nav
           className="sticky py-1 w-full h-fit z-100 text-white flex flex-row gap-[clamp(4vw,4vw,1.5rem)] justify-center bg-opacity-50 backdrop-blur-[50px] "
           id="navbar"
@@ -50,17 +59,19 @@ const HomePage: React.FC = () => {
           id="home"
         >
           <Marquee
+            data-scroll
+            data-scroll-speed="0.3"
             speed={50}
             className="flex flex-row w-fit h-fit mix-blend-exclusion"
           >
             <h1
-              className="w-fit h-fit text-white font-archivo text-[50vh] font-bold m-0 select-none"
+              className="w-fit h-fit text-white font-[family-name:var(--archivo)] text-[50vh] font-bold m-0 select-none"
               id="t1"
             >
               RECKLESS•STUDIOS•
             </h1>
             <h1
-              className="w-fit h-fit text-white font-archivo text-[50vh] font-bold m-0 select-none"
+              className="w-fit h-fit text-white font-[family-name:var(--archivo)] text-[50vh] font-bold m-0 select-none"
               id="t2"
             >
               RECKLESS•STUDIOS•
@@ -98,17 +109,13 @@ const HomePage: React.FC = () => {
             </h1>
           </div>
         </section>
-        <section className="bg-white w-full h-screen" id="services">
-          <div className="flex">
-            <ScrollVelocity
-              texts={["Services Services", "Services Services"]}
-              velocity={50}
-              className="font-archivo text-black font-semibold space-x-0"
-            ></ScrollVelocity>
-          </div>
-          <div className="flex justify-center ">
-            <ServiceCard title={"Hello"} description={"World"}></ServiceCard>
-          </div>
+        <section
+          className="bg-white w-full h-screen flex justify-start font-archivo"
+          id="services"
+        >
+          <h2 className="text-black">
+            Got an idea? Let's create something great.
+          </h2>
         </section>
       </div>
     </>
