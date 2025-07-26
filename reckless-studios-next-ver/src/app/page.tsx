@@ -6,6 +6,7 @@ import DecryptedText from "./components/DecryptedText/DecryptedText";
 import Dither from "./backgrounds/Dither/Dither";
 import ScrambleText from "./components/ScrambleText/ScrambleText";
 import { useEffect } from "react";
+import About from "./components/About/About";
 const HomePage: React.FC = () => {
   useEffect(() => {
     (async () => {
@@ -16,7 +17,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col font-[family-name:var(--archivo)] m-0 p-0 bg-black text-white w-screen h-full overflow-x-hidden !scroll-smooth">
+      <div className="flex flex-col font-[family-name:var(--archivo)] m-0 p-0 bg-black text-white w-screen h-full overflow-x-hidden ">
         <nav
           className="sticky py-1 w-full h-fit z-100 text-white flex flex-row gap-[clamp(4vw,4vw,1.5rem)] justify-center bg-opacity-50 backdrop-blur-[50px] "
           id="navbar"
@@ -57,42 +58,38 @@ const HomePage: React.FC = () => {
         <header
           className="overflow-x-hidden w-full h-screen flex items-end text-white bg-black bg-[url(RecklessBackPlaceholder.png)] bg-cover bg-center bg-no-repeat"
           id="home"
+          data-scroll
+          data-scroll-speed="-0.1"
         >
           <Marquee
-            data-scroll
-            data-scroll-speed="0.3"
             speed={50}
             className="flex flex-row w-fit h-fit mix-blend-exclusion"
           >
             <h1
               className="w-fit h-fit text-white font-[family-name:var(--archivo)] text-[50vh] font-bold m-0 select-none"
               id="t1"
+              data-scroll
+              data-scroll-speed="0.5"
             >
               RECKLESS•STUDIOS•
             </h1>
             <h1
               className="w-fit h-fit text-white font-[family-name:var(--archivo)] text-[50vh] font-bold m-0 select-none"
               id="t2"
+              data-scroll
+              data-scroll-speed="0.5"
             >
               RECKLESS•STUDIOS•
             </h1>
           </Marquee>
         </header>
-        <section
-          className="overflow-x-hidden uppercase break-words bg-[#e93636] w-full flex justify-center items-center h-fit m-0"
-          id="about"
-        >
-          <h2
-            className="overflow-x-hidden break-words w-full m-0 text-white text-justify font-archivo text-[10vw] font-bold py-[5vh] px-[5vw]"
-            id="aboutText"
-          >
-            We are a independent film studio based in madison, wi.
-          </h2>
+        <section className="overflow-hidden uppercase bg-[#e93636] w-screen flex justify-center items-center h-full m-0 text-[10vw] font-[550] py-[10vh]">
+          <About />
         </section>
         <section className="relative w-full h-full" id="film">
           <div className="w-full h-screen relative z-0">
             <Dither
-              waveColor={[0.5, 0.5, 0.5]}
+              waveColor={[0.4, 0.4, 0.4]}
               disableAnimation={false}
               enableMouseInteraction={false}
               colorNum={4}
@@ -102,11 +99,7 @@ const HomePage: React.FC = () => {
             />
           </div>
           <div className="flex justify-center items-center absolute top-0 left-0 w-full h-full">
-            <h1 className="p-[2vh_2vw] relative z-1">
-              <a href="#">
-                <ScrambleText />
-              </a>
-            </h1>
+            <ScrambleText />
           </div>
         </section>
         <section
