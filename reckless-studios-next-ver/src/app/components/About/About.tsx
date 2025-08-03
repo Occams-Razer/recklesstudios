@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
+import styles from "./about.module.css";
 
 export default function description() {
   const phrases = [
@@ -11,15 +12,25 @@ export default function description() {
     "Madison, WI.",
   ];
   return (
-    <div>
+    <div className={styles.about}>
       {phrases.map((phrase, index) => {
-        return <AnimatedText key={index}>{phrase}</AnimatedText>;
+        return (
+          <AnimatedText className={styles.aboutText} key={index}>
+            {phrase}
+          </AnimatedText>
+        );
       })}
     </div>
   );
 }
 
-function AnimatedText({ children }: { children: React.ReactNode }) {
+function AnimatedText({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const text = useRef(null);
 
   useLayoutEffect(() => {
@@ -38,5 +49,9 @@ function AnimatedText({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
-  return <div ref={text}>{children}</div>;
+  return (
+    <div ref={text} className={className}>
+      {children}
+    </div>
+  );
 }

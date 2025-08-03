@@ -1,0 +1,10 @@
+.main {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+  color: #ffffff;
+  background-color: #000000;
+}
