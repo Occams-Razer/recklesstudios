@@ -5,20 +5,36 @@ import Video from "next-video";
 import RecklessBackground from "/videos/RecklessBackground.mp4";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Hero = () => {
   const firsText = useRef(null);
   const secondText = useRef(null);
+  const marquee = useRef(null);
   let xPercent = 0;
   let direction = -1;
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     requestAnimationFrame(animation);
+    gsap.to(marquee.current, {
+      ScrollTrigger: {
+        trigger: document.documentElement,
+        start: 0,
+        end: window.innerHeight,
+        scrub: 0.25,
+        onUpdate: (e: { direction: number }) => (direction = e.direction * 1),
+      },
+      x: "-500px",
+    });
   }, []);
 
   const animation = () => {
     if (xPercent <= -100) {
       xPercent = 0;
+    }
+    if (xPercent > 0) {
+      xPercent = -100;
     }
     gsap.set(firsText.current, { xPercent: xPercent });
     gsap.set(secondText.current, { xPercent: xPercent });
@@ -37,9 +53,8 @@ const Hero = () => {
           <source src="/RecklessBackground.mp4" />
         </video>
         <div className={styles.marqueeContainer}>
-          <div className={styles.marquee}>
+          <div ref={marquee} className={styles.marquee}>
             <h1
-              className="w-fit h-fit text-white font-[family-name:var(--archivo)] text-[50vh] font-bold m-0 select-none"
               id="t1"
               ref={firsText}
               // data-scroll
@@ -48,7 +63,6 @@ const Hero = () => {
               RECKLESS•STUDIOS•
             </h1>
             <h1
-              className="w-fit h-fit text-white font-[family-name:var(--archivo)] text-[50vh] font-bold m-0 select-none"
               id="t2"
               ref={secondText}
               // data-scroll

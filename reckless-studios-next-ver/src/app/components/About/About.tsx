@@ -5,7 +5,7 @@ import styles from "./about.module.css";
 
 export default function description() {
   const phrases = [
-    "We are a",
+    "We are an",
     "Independent",
     "Film Studio",
     "Based in",

@@ -17,7 +17,7 @@ const Navbar = () => {
         </h3>
         <h3 className="navText" id="nav3">
           <a href="#film" className={styles.navText}>
-            film
+            our work
           </a>
         </h3>
         <h3 className="navText" id="nav4">
