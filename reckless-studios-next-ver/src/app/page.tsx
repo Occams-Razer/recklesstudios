@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Film from "./components/Film/Film";
 import Services from "./components/Services/Services";
+import Image from "next/image";
 const HomePage: React.FC = () => {
   useEffect(() => {
     (async () => {
@@ -19,10 +20,41 @@ const HomePage: React.FC = () => {
       <div className={styles.main}>
         <Navbar />
         <Hero />
-        {/* <section className="overflow-hidden uppercase bg-[#e93636] w-screen flex justify-center items-center h-full m-0 text-[10vw] font-[600] py-[10vh]"> */}
         <About />
         <Film />
         <Services />
+        <footer className={styles.footer}>
+          <div className={styles.nav}>
+            <p>
+              <a href="#">home</a>
+            </p>
+            <p>
+              <a href="">about</a>
+            </p>
+            <p>
+              <a href="">our work</a>
+            </p>
+            <p>
+              <a href="">contact</a>
+            </p>
+          </div>
+          <div className={styles.media}>
+            <a
+              href="https://www.instagram.com/recklessstudiosfilm/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/instagram_svgrepo.com.svg"
+                width={24}
+                height={24}
+                alt="Instagram Icon"
+                className={styles.socialIcon}
+              />
+            </a>
+            {/* <p>{"[x]"}</p> */}
+          </div>
+        </footer>
       </div>
     </>
   );

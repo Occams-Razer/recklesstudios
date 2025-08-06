@@ -8,3 +8,30 @@
   color: #ffffff;
   background-color: #000000;
 }
+
+.footer {
+  width: 100%;
+  margin-block: 5vh;
+  justify-content: space-around;
+  display: flex;
+  background-color: black;
+  color: white;
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.nav {
+  justify-content: space-between;
+}
+
+.socialIcon {
+  width: 5vw;
+  height: 5vw;
+}
