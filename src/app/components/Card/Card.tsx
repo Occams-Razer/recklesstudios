@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface Props {
   title: string;
   description: string;
@@ -9,7 +10,7 @@ const Card = ({ title, description, icon }: Props) => {
   return (
     <>
       <div className="bg-[#e93636] pt-px-30 pl-px-35 text-white">
-        <img src={icon}></img>
+        <Image src={icon} alt="icon" />
         <h2>{title}</h2>
         <p>{description}</p>
       </div>

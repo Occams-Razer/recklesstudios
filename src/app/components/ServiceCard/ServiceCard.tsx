@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface ServiceCardProps {
   title: string;
   description: string;
@@ -50,7 +51,7 @@ const ServiceCard = ({
       {isPopular && (
         <div className="inline-flex items-center absolute left-[495px] top-0 w-[70px] h-[286px]">
           <div className="w-[285.812px] h-[70px] rotate-90 fill-white relative">
-            <img
+            <Image
               src="https://api.builder.io/api/v1/image/assets/TEMP/555795722024204fa2c60bc743ba435f1ea53260?width=574"
               alt="Popular badge background"
               className="w-[287px] h-[70px] rotate-90 fill-[#D9D9D9] absolute left-0 top-0"

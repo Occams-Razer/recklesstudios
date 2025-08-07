@@ -1,5 +1,4 @@
 import ScrambleText from "../ScrambleText/ScrambleText";
-import Dither from "../../backgrounds/Dither/Dither";
 import styles from "./film.module.css";
 const Film = () => {
   return (

@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import styles from "./hero.module.css";
-// import RecklessBackground from "/videos/RecklessBackground.mp4";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
