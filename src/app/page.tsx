@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
+      const _locomotiveScroll = new LocomotiveScroll();
     })();
   }, []);
 
