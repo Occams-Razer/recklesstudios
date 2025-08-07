@@ -1,6 +1,5 @@
 "use client";
 import { useScramble } from "use-scramble";
-import { useEffect } from "react";
 
 const ScrambleText = () => {
   const { ref: titleRef, replay: titleReplay } = useScramble({
