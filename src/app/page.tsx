@@ -7,14 +7,18 @@ import Hero from "./components/Hero/Hero";
 import Film from "./components/Film/Film";
 import Services from "./components/Services/Services";
 import Image from "next/image";
+import Lenis from "lenis";
+
 const HomePage: React.FC = () => {
   useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
-    })();
-  }, []);
+    const lenis = new Lenis();
 
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
   return (
     <>
       <div className={styles.main}>
