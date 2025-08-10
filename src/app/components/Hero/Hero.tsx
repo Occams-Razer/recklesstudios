@@ -47,7 +47,7 @@ const Hero = () => {
         data-scroll-speed="-0.1"
       >
         <video width="100vw" height="100vh" loop autoPlay muted>
-          <source src="/RecklessBackground.mp4" />
+          <source src="public/RecklessBackground.mp4" />
         </video>
         <div className={styles.marqueeContainer}>
           <div ref={marquee} className={styles.marquee}>
@@ -73,5 +73,4 @@ const Hero = () => {
     </div>
   );
 };
-
 export default Hero;
