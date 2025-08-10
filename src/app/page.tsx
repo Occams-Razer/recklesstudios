@@ -8,12 +8,12 @@ import Film from "./components/Film/Film";
 import Services from "./components/Services/Services";
 import Image from "next/image";
 const HomePage: React.FC = () => {
-  // useEffect(() => {
-  //   (async () => {
-  //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
-  //     const _locomotiveScroll = new LocomotiveScroll();
-  //   })();
-  // }, []);
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
 
   return (
     <>
