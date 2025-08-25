@@ -3,6 +3,9 @@ import styles from "./hero.module.css";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BackgroundVideo from "next-video/background-video";
+import RecklessBackground from "/videos/reckless-background.mp4";
+import getStarted from "/videos/get-started.mp4";
 
 const Hero = () => {
   const firsText = useRef(null);
@@ -46,29 +49,28 @@ const Hero = () => {
         data-scroll
         data-scroll-speed="-0.1"
       >
-        <video width="100vw" height="100vh" loop autoPlay muted>
-          <source src="public/RecklessBackground.mp4" />
-        </video>
-        <div className={styles.marqueeContainer}>
-          <div ref={marquee} className={styles.marquee}>
-            <h1
-              id="t1"
-              ref={firsText}
-              // data-scroll
-              // data-scroll-speed="0.5"
-            >
-              RECKLESS•STUDIOS•
-            </h1>
-            <h1
-              id="t2"
-              ref={secondText}
-              // data-scroll
-              // data-scroll-speed="0.5"
-            >
-              RECKLESS•STUDIOS•
-            </h1>
+        <BackgroundVideo src={RecklessBackground}>
+          <div className={styles.marqueeContainer}>
+            <div ref={marquee} className={styles.marquee}>
+              <h1
+                id="t1"
+                ref={firsText}
+                // data-scroll
+                // data-scroll-speed="0.5"
+              >
+                RECKLESS•STUDIOS•
+              </h1>
+              <h1
+                id="t2"
+                ref={secondText}
+                // data-scroll
+                // data-scroll-speed="0.5"
+              >
+                RECKLESS•STUDIOS•
+              </h1>
+            </div>
           </div>
-        </div>
+        </BackgroundVideo>
       </header>
     </div>
   );
