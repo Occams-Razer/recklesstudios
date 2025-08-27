@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "originalFilePath": "videos\\reckless-background.mp4",
+  "originalFilePath": "videos/reckless-background.mp4",
   "provider": "mux",
   "providerMetadata": {
     "mux": {

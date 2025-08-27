@@ -4,8 +4,8 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BackgroundVideo from "next-video/background-video";
+// Update the path to where your video file is actually located
 import RecklessBackground from "/videos/reckless-background.mp4";
-import getStarted from "/videos/get-started.mp4";
 
 const Hero = () => {
   const firsText = useRef(null);
