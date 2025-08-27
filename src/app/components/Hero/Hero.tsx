@@ -49,28 +49,29 @@ const Hero = () => {
         data-scroll
         data-scroll-speed="-0.1"
       >
-        <BackgroundVideo src={RecklessBackground}>
-          <div className={styles.marqueeContainer}>
-            <div ref={marquee} className={styles.marquee}>
-              <h1
-                id="t1"
-                ref={firsText}
-                // data-scroll
-                // data-scroll-speed="0.5"
-              >
-                RECKLESS•STUDIOS•
-              </h1>
-              <h1
-                id="t2"
-                ref={secondText}
-                // data-scroll
-                // data-scroll-speed="0.5"
-              >
-                RECKLESS•STUDIOS•
-              </h1>
-            </div>
+        <video width="100vw" height="100vh" loop autoPlay muted>
+          <source src="/RecklessBackground.mp4" />
+        </video>
+        <div className={styles.marqueeContainer}>
+          <div ref={marquee} className={styles.marquee}>
+            <h1
+              id="t1"
+              ref={firsText}
+              // data-scroll
+              // data-scroll-speed="0.5"
+            >
+              RECKLESS•STUDIOS•
+            </h1>
+            <h1
+              id="t2"
+              ref={secondText}
+              // data-scroll
+              // data-scroll-speed="0.5"
+            >
+              RECKLESS•STUDIOS•
+            </h1>
           </div>
-        </BackgroundVideo>
+        </div>
       </header>
     </div>
   );
