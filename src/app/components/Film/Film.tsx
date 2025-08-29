@@ -1,22 +1,19 @@
-import ScrambleText from "../ScrambleText/ScrambleText";
 import styles from "./film.module.css";
+import Video from "next-video";
+import carShow from "/videos/car-show.mp4";
+import airCar from "/videos/air-car.mp4";
+import sunsetVideo from "/videos/sunset-video.mp4";
+
 const Film = () => {
   return (
     <div className={styles.main}>
-      <div className={styles.background}>
-        {/* <Dither
-          waveColor={[0.4, 0.4, 0.4]}
-          disableAnimation={false}
-          enableMouseInteraction={false}
-          colorNum={4}
-          waveAmplitude={0.2}
-          waveFrequency={3}
-          waveSpeed={0.05}
-        /> */}
+      {/* <div className={styles.background}>
+        
       </div>
-      <div className={styles.text}>
-        <ScrambleText />
-      </div>
+      <div className={styles.text}></div> */}
+      <Video src={carShow} />
+      <Video src={airCar} />
+      <Video src={sunsetVideo} />
     </div>
   );
 };

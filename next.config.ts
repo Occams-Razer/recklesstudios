@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
       test: /\.(mp4|webm|ogg|mov)$/,
       type: "asset/resource",
       generator: {
-        filename: "/videos/[name].[hash][ext]",
+        filename: "videos/[name][ext]",
       },
     });
     return config;

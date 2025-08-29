@@ -22,7 +22,6 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div className={styles.main}>
-        <Navbar />
         <Hero />
         <About />
         <Film />
