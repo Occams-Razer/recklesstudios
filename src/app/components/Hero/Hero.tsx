@@ -51,7 +51,10 @@ const Hero = () => {
         data-scroll
         data-scroll-speed="-0.1"
       >
-        <BackgroundVideo src={RecklessBackground} className={styles.video}>
+        <BackgroundVideo
+          src={RecklessBackground}
+          style={{ padding: "0", margin: "0", top: "0" }}
+        >
           <Navbar />
           <div className={styles.marqueeContainer}>
             <div ref={marquee} className={styles.marquee}>

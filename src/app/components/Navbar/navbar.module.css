@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 .main {
+  top: 0;
   display: flex;
   height: 100vh;
   align-self: flex-start;
