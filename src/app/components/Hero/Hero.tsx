@@ -45,15 +45,10 @@ const Hero = () => {
   };
   return (
     <div>
-      <header
-        className={styles.header}
-        id="home"
-        data-scroll
-        data-scroll-speed="-0.1"
-      >
+      <header className={styles.header} id="home">
         <BackgroundVideo
           src={RecklessBackground}
-          style={{ padding: "0", margin: "0", top: "0" }}
+          style={{ display: "grid", padding: "0", margin: "0" }}
         >
           <Navbar />
           <div className={styles.marqueeContainer}>

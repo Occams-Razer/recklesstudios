@@ -4,19 +4,35 @@ import MediaThemeMicrovideo from "player.style/microvideo/react";
 import carShow from "/videos/car-show.mp4";
 import airCar from "/videos/air-car.mp4";
 import sunsetVideo from "/videos/sunset-video.mp4";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, useEffect } from "react";
+
 const Film = () => {
-  const targetRef = useRef(null);
+  const carouselRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({ target: targetRef });
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-55%"]);
+    let sections = gsap.utils.toArray(".panel");
+
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: carouselRef.current,
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        end: "+=3500",
+      },
+    });
+  }, []);
+
   return (
-    <div className={styles.carousel} ref={targetRef}>
+    <div className={styles.carousel} ref={carouselRef}>
       <div className={styles.contentContainer}>
-        <motion.div className={styles.videoItems} style={{ x }}>
+        <div className={styles.videoItems}>
           <Video
             src={carShow}
             key="car-show"
@@ -27,6 +43,7 @@ const Film = () => {
               "--media-accent-color": "#16c9c9",
               width: "clamp(10rem, 50vw, 60rem)",
             }}
+            className="panel"
           />
           <Video
             src={airCar}
@@ -38,6 +55,7 @@ const Film = () => {
               "--media-accent-color": "#16c9c9",
               width: "clamp(10rem, 50vw, 60rem)",
             }}
+            className="panel"
           />
           <Video
             src={sunsetVideo}
@@ -49,8 +67,9 @@ const Film = () => {
               "--media-accent-color": "#16c9c9",
               width: "clamp(10rem, 50vw, 60rem)",
             }}
+            className="panel"
           />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

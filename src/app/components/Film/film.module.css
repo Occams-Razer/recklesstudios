@@ -1,6 +1,8 @@
 .carousel {
   background-color: rgb(144, 144, 144);
-  height: 500vh;
+  height: 100vh;
+  width: 300%;
+  overscroll-behavior: none;
 }
 
 .contentContainer {
