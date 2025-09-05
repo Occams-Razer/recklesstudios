@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 .main {
   top: 0;
+  margin-top: -5%;
   display: flex;
   height: 100vh;
   align-self: flex-start;
@@ -24,8 +25,8 @@
   text-align: center;
   color: #ffffff;
   overflow-wrap: break-word;
-  /* /* transition-property: transform;
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms; */
+  transition-duration: 300ms;
   font-size: clamp(32px, 2vw, 3rem);
 }

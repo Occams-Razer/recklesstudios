@@ -48,7 +48,11 @@ const Hero = () => {
       <header className={styles.header} id="home">
         <BackgroundVideo
           src={RecklessBackground}
-          style={{ display: "grid", padding: "0", margin: "0" }}
+          style={{
+            display: "grid",
+            padding: "0px !important",
+            margin: "0 ",
+          }}
         >
           <Navbar />
           <div className={styles.marqueeContainer}>

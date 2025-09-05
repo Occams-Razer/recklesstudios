@@ -18,21 +18,25 @@ const Film = () => {
 
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
-      ease: "power2.inOut",
+      ease: "none",
       scrollTrigger: {
         trigger: carouselRef.current,
         pin: true,
         scrub: 1,
         snap: 1 / (sections.length - 1),
-        end: "+=3500",
+        end: "+=875",
       },
     });
   }, []);
 
   return (
     <div className={styles.carousel} ref={carouselRef}>
+      <h2>Our Work</h2>
       <div className={styles.contentContainer}>
         <div className={styles.videoItems}>
+          <div className="panel">
+            <h2 className={styles.title}>Our work</h2>
+          </div>
           <Video
             src={carShow}
             key="car-show"
