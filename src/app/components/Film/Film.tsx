@@ -4,6 +4,7 @@ import MediaThemeMicrovideo from "player.style/microvideo/react";
 import carShow from "/videos/car-show.mp4";
 import airCar from "/videos/air-car.mp4";
 import sunsetVideo from "/videos/sunset-video.mp4";
+import football from "/videos/football.mp4";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useEffect } from "react";
@@ -24,18 +25,19 @@ const Film = () => {
         pin: true,
         scrub: 1,
         snap: 1 / (sections.length - 1),
-        end: "+=875",
+        end: "+=1000",
       },
     });
   }, []);
 
   return (
     <div className={styles.carousel} ref={carouselRef}>
-      <h2>Our Work</h2>
       <div className={styles.contentContainer}>
         <div className={styles.videoItems}>
           <div className="panel">
-            <h2 className={styles.title}>Our work</h2>
+            <h2 className={styles.title}>
+              Our <br></br>work
+            </h2>
           </div>
           <Video
             src={carShow}
@@ -50,7 +52,7 @@ const Film = () => {
             className="panel"
           />
           <Video
-            src={airCar}
+            src={football}
             key="air-car"
             theme={MediaThemeMicrovideo}
             style={{

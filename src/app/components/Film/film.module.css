@@ -22,3 +22,10 @@
   padding-inline: 4rem;
   padding-block: 0;
 }
+
+.title {
+  color: white;
+  font-size: 10vw;
+  font-weight: bold;
+  position: sticky;
+}
