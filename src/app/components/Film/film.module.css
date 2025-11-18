@@ -1,31 +1,29 @@
-.carousel {
-  background-color: black;
-  height: 100vh;
-  width: 300%;
-  overscroll-behavior: none;
-}
-
 .contentContainer {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-
-.videoItems {
+.panel {
+  grid-area: 1/1/1/1;
+}
+.videoGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, 1fr);
   grid-gap: 3vw;
   padding-inline: 4rem;
   padding-block: 0;
 }
 
 .title {
+  padding-block: 10vh;
+  align-self: flex-start;
   color: white;
   font-size: 10vw;
-  font-weight: bold;
+  font-weight: medium;
   position: sticky;
 }

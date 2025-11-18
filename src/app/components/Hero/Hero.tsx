@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BackgroundVideo from "next-video/background-video";
 import Navbar from "../Navbar/Navbar";
+import Image from "next/image";
 // Update the path to where your video file is actually located
 import RecklessBackground from "/videos/reckless-background.mp4";
 // import getStarted from "/videos/get-started.mp4";
@@ -44,40 +45,23 @@ const Hero = () => {
     requestAnimationFrame(animation);
   };
   return (
-    <div>
-      <header className={styles.header} id="home">
-        <BackgroundVideo
-          src={RecklessBackground}
-          style={{
-            display: "grid",
-            padding: "0px !important",
-            margin: "0 ",
-          }}
-        >
-          <Navbar />
-          <div className={styles.marqueeContainer}>
-            <div ref={marquee} className={styles.marquee}>
-              <h1
-                id="t1"
-                ref={firsText}
-                // data-scroll
-                // data-scroll-speed="0.5"
-              >
-                RECKLESS•STUDIOS•
-              </h1>
-              <h1
-                id="t2"
-                ref={secondText}
-                // data-scroll
-                // data-scroll-speed="0.5"
-              >
-                RECKLESS•STUDIOS•
-              </h1>
-            </div>
-          </div>
-        </BackgroundVideo>
-      </header>
-    </div>
+    <header className={styles.header} id="home">
+      <Navbar />
+      <Image
+        src={"/recklessBackground.gif"}
+        alt={"Background photo"}
+        width={1280}
+        height={800}
+        objectFit="contain"
+        className={styles.backgroundImage}
+      ></Image>
+      <div className={styles.marqueeContainer}>
+        <div ref={marquee} className={styles.marquee}>
+          <h1 ref={firsText}>RECKLESS•STUDIOS•</h1>
+          <h1 ref={secondText}>RECKLESS•STUDIOS•</h1>
+        </div>
+      </div>
+    </header>
   );
 };
 
