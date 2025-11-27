@@ -13,9 +13,12 @@ import ScrollVelocity from "../ScrollVelocity/ScrollVelocity";
 const Film = () => {
   return (
     <div className={styles.contentContainer}>
-      <h2 className={styles.title}>
-        <ScrollVelocity texts={["OUR WORK -", "OUR WORK -"]} />
-      </h2>
+      <h4 className={styles.title}>
+        <ScrollVelocity
+          className={styles.headerText}
+          texts={["OUR WORK - OUR WORK -", "OUR WORK - OUR WORK -"]}
+        />
+      </h4>
       <div className={styles.videoGrid}>
         <Video
           src={carShow}
@@ -25,7 +28,7 @@ const Film = () => {
             "--media-primary-color": "#e93636",
             "--media-secondary-color": "#000000",
             "--media-accent-color": "#16c9c9",
-            width: "clamp(10rem, 50vw, 60rem)",
+            width: "25vw",
           }}
           className="panel"
         />
@@ -37,7 +40,7 @@ const Film = () => {
             "--media-primary-color": "#e93636",
             "--media-secondary-color": "#000000",
             "--media-accent-color": "#16c9c9",
-            width: "clamp(10rem, 50vw, 60rem)",
+            width: "25vw",
           }}
           className="panel"
         />
@@ -49,7 +52,7 @@ const Film = () => {
             "--media-primary-color": "#e93636",
             "--media-secondary-color": "#000000",
             "--media-accent-color": "#16c9c9",
-            width: "clamp(10rem, 50vw, 60rem)",
+            width: "25vw",
           }}
           className="panel"
         />

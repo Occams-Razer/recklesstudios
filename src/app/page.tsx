@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import About from "./components/About/About";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import TestHero from "./components/Hero/testHero";
 import Film from "./components/Film/Film";
 import Services from "./components/Services/Services";
 import Image from "next/image";
@@ -22,7 +23,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div className={styles.main}>
-        <Hero />
+        <TestHero />
         <About />
         <Film />
         <Services />

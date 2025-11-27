@@ -50,9 +50,8 @@ const Hero = () => {
       <Image
         src={"/recklessBackground.gif"}
         alt={"Background photo"}
-        width={1280}
-        height={800}
-        objectFit="contain"
+        fill={true}
+        objectFit="cover"
         className={styles.backgroundImage}
       ></Image>
       <div className={styles.marqueeContainer}>
