@@ -1,6 +1,6 @@
 @font-face {
   font-family: "HGHeisei";
-  src: url(../../../../public/fonts/HGHeiseiMinchotaiW3.ttf);
+  src: url(../../../../../../HGHeiseiMinchotaiW3.ttf);
 }
 
 .main {
@@ -10,9 +10,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "HGHeisei";
+  background-image: url(../../../../public/Daveed.JPG);
+  background-size: cover;
+  background-position: center, center;
 }
 
 .title {
+  /* transform: translateX(-10px); */
   font-size: 5em;
-  font-family: "HGHeisei";
 }
