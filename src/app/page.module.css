@@ -35,3 +35,32 @@
   width: 5vw;
   height: 5vw;
 }
+/* TS for temporary be with you screen */
+.mainTemp {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+  color: white;
+}
+
+.header {
+  justify-self: flex-start;
+  font-weight: 600;
+  font-size: clamp(3em, 5vw, 10em);
+}
+
+.text {
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 5em);
+}
+
+.image {
+  transform: rotate(0.01turn);
+  width: 7vw;
+  min-width: 5rem;
+}
