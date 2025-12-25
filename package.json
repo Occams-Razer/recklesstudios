@@ -27,6 +27,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
+    "react-intersection-observer": "^10.0.0",
     "three": "^0.167.1",
     "use-scramble": "^2.2.15"
   },

@@ -16,7 +16,10 @@ const Film = () => {
       <h4 className={styles.title}>
         <ScrollVelocity
           className={styles.headerText}
-          texts={["OUR WORK - OUR WORK -", "OUR WORK - OUR WORK -"]}
+          texts={[
+            "OUR WORK - OUR WORK - OUR WORK -",
+            "OUR WORK - OUR WORK - OUR WORK -",
+          ]}
         />
       </h4>
       <div className={styles.videoGrid}>

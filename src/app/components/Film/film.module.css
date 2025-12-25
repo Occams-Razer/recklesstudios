@@ -1,6 +1,7 @@
 .contentContainer {
   height: 100vh;
   width: 100vw;
+  background-color: white;
   /* position: sticky; */
   /* top: 0; */
   /* display: flex; */
@@ -32,7 +33,7 @@
 .title {
   padding-block: 10vh;
   align-self: flex-start;
-  color: white;
+  color: black;
   font-size: 2em;
   font-weight: medium;
   position: sticky;

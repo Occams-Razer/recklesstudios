@@ -3,12 +3,9 @@ import styles from "./hero.module.css";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import BackgroundVideo from "next-video/background-video";
 import Navbar from "../Navbar/Navbar";
 import Image from "next/image";
-// Update the path to where your video file is actually located
-import RecklessBackground from "/videos/reckless-background.mp4";
-// import getStarted from "/videos/get-started.mp4";
+import localFont from "next/font/local";
 
 const Hero = () => {
   const firsText = useRef(null);
