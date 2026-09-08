@@ -2,11 +2,9 @@ import type { NextConfig } from "next";
 import { withNextVideo } from "next-video/process";
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [{ protocol: "https", hostname: "image.mux.com" }],
   },
   webpack: (config) => {
     config.module.rules.push({

@@ -1,39 +1,128 @@
-.main {
-  width: 100vw;
-  height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../../../../public/rangerScaled.png);
-  background-size: cover;
-  text-transform: uppercase;
-  display: grid;
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-areas:
-    "header header"
-    "sidebar body";
-  padding-inline: 5vw;
-  padding-block: 2vh;
-  row-gap: 1vh;
-  column-gap: 1vw;
-  text-align: justify;
+.about {
+  position: relative;
+  padding: var(--section) var(--gutter);
+  background: var(--bg);
 }
 
-.headerText {
-  font-size: 5vw;
-  grid-area: header;
+.grid {
+  row-gap: 0;
 }
 
-.sidebar {
+.index {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  color: var(--muted);
+  margin-bottom: var(--s6);
+}
+
+.statement {
+  grid-column: 1 / 11;
+  grid-row: 2;
+  font-size: var(--t-h2);
+  font-weight: 500;
+  line-height: var(--lh-h2);
+  letter-spacing: var(--track-h2);
+  text-wrap: balance;
+  text-align: left;
+}
+
+.aside {
+  grid-column: 1 / 5;
+  grid-row: 3;
+  align-self: start;
   display: flex;
-  grid-area: sidebar;
   flex-direction: column;
+  gap: var(--s4);
+  margin-top: var(--s9);
+  padding-right: var(--s3);
 }
 
-.graphic {
-  width: 100%;
+.lead {
+  font-size: var(--t-lead);
+  line-height: var(--lh-lead);
+  color: var(--muted);
+  max-width: 22em;
+  text-wrap: pretty;
 }
 
-.body {
-  font-size: 3vw;
-  font-weight: 300;
+.cta {
+  font-size: var(--t-body);
+  font-weight: 500;
+  width: fit-content;
+}
+
+.figure {
+  grid-column: 5 / 13;
+  grid-row: 3;
+  position: relative;
+  margin: var(--s9) calc(var(--gutter) * -1) 0 0;
+}
+
+.imgWrap {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #151515;
+  clip-path: inset(0 0 0 0);
+}
+
+.img {
+  object-fit: cover;
+  object-position: 50% 30%;
+  will-change: transform;
+}
+
+.pistol {
+  position: absolute;
+  left: -7%;
+  top: -8%;
+  width: 28%;
+  height: auto;
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.caption {
+  margin-top: var(--s2);
+  color: var(--faint);
+}
+
+@media (max-width: 899px) {
+  .index {
+    grid-column: 1 / -1;
+    margin-bottom: var(--s4);
+  }
+
+  .statement {
+    grid-column: 1 / -1;
+  }
+
+  .aside {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: var(--s6);
+    padding-right: 0;
+  }
+
+  .figure {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin: var(--s7) calc(var(--gutter) * -1) 0;
+  }
+
+  .imgWrap {
+    aspect-ratio: 4 / 5;
+  }
+
+  .pistol {
+    left: auto;
+    right: 4%;
+    top: -6%;
+    width: 40%;
+  }
+
+  .caption {
+    margin-left: var(--gutter);
+  }
 }

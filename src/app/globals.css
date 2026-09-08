@@ -1,7 +1,239 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./styles/tokens.css";
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  scroll-padding-top: var(--nav-h);
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Archivo", Arial, Helvetica, sans-serif;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100svh;
+  font-family: var(--font-display);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------
+   Utilities
+   ------------------------------------------------------------------ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--s2);
+  left: var(--s2);
+  z-index: calc(var(--z-cursor) + 1);
+  padding: 0.75rem 1rem;
+  background: var(--fg);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--t-label);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  transform: translateY(-200%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline-color: var(--ink);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--t-label);
+  font-weight: 400;
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
+.link-arrow .arrow {
+  display: inline-block;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.link-arrow:hover .arrow,
+.link-arrow:focus-visible .arrow {
+  transform: translateX(0.35em);
+}
+
+/* underline that draws left → right */
+.u-draw {
+  position: relative;
+}
+
+.u-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.15em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.u-draw:hover::after,
+.u-draw:focus-visible::after,
+.u-draw[aria-current]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* SplitText masked lines: give descenders room without shifting layout */
+.line-mask {
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+/* ------------------------------------------------------------------
+   Film grain — one composited layer, transform-only animation
+   ------------------------------------------------------------------ */
+.grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: var(--z-grain);
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='256' height='256'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: soft-light;
+  will-change: transform;
+  contain: strict;
+  animation: grain 1.2s steps(8) infinite;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  12.5% { transform: translate(-4%, -6%); }
+  25% { transform: translate(3%, 2%); }
+  37.5% { transform: translate(-2%, 7%); }
+  50% { transform: translate(6%, -3%); }
+  62.5% { transform: translate(-5%, 4%); }
+  75% { transform: translate(2%, -7%); }
+  87.5% { transform: translate(-6%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 767px) {
+  .grain {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Preloader curtain — SSR'd, hidden for no-JS and reduced motion
+   ------------------------------------------------------------------ */
+html:not(.js) .preloader {
+  display: none;
+}
+
+/* ------------------------------------------------------------------
+   Reduced motion
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .preloader,
+  .grain,
+  .cursor {
+    display: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

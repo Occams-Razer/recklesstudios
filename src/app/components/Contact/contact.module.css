@@ -1,0 +1,114 @@
+.contact {
+  position: relative;
+  min-height: 80svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--section) var(--gutter) var(--s8);
+  background: var(--red);
+  color: var(--fg);
+  clip-path: inset(0 0 0 0);
+}
+
+.index {
+  color: var(--ink);
+  margin-bottom: var(--s6);
+}
+
+.headline {
+  font-size: var(--t-display);
+  font-weight: 600;
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+  text-wrap: balance;
+  max-width: 11em;
+  text-align: left;
+}
+
+.rule {
+  height: 1px;
+  background: rgba(10, 10, 10, 0.35);
+  margin-top: var(--s10);
+  margin-bottom: var(--s5);
+}
+
+.row {
+  row-gap: var(--s5);
+  align-items: end;
+}
+
+.email {
+  grid-column: 1 / 8;
+  font-size: min(var(--t-h3), 5.2vw);
+  font-weight: 500;
+  line-height: var(--lh-h3);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.emailText {
+  white-space: nowrap;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  color: var(--ink);
+}
+
+.cell:nth-of-type(1) {
+  grid-column: 8 / 11;
+}
+
+.cell:nth-of-type(2) {
+  grid-column: 11 / 13;
+}
+
+.cellLabel {
+  color: var(--ink);
+}
+
+.cellLink {
+  font-size: var(--t-body);
+  font-weight: 500;
+  width: fit-content;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 899px) {
+  .contact {
+    min-height: 0;
+    padding-bottom: var(--s7);
+  }
+
+  .rule {
+    margin-top: var(--s8);
+  }
+
+  .email {
+    grid-column: 1 / -1;
+  }
+
+  .cell:nth-of-type(1) {
+    grid-column: 1 / 7;
+  }
+
+  .cell:nth-of-type(2) {
+    grid-column: 7 / 13;
+  }
+}
+
+@media (max-width: 479px) {
+  .cell:nth-of-type(1),
+  .cell:nth-of-type(2) {
+    grid-column: 1 / -1;
+  }
+
+  .row {
+    row-gap: var(--s4);
+  }
+}
